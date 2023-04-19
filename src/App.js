@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Route, Routes} from 'react-router-dom'
+import Create from "./pages/Create";
+import Note from "./pages/Note";
+import Layout from "./components/Layout";
+// import {createTheme, ThemeProvider} from "@mui/material/styles"
+
+// const theme = createTheme({ palette: { primary: {main: '#fefefe'} } })
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <ThemeProvider theme={theme}>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Note />} />
+        <Route path="/create" element={<Create />} />
+      </Routes>
+    </Layout>
+  // </ThemeProvider>
   );
 }
 
